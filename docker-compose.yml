@@ -1,0 +1,26 @@
+version: "3.8"
+name: loyalty-program
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      RUBY_ENV: development
+      TZ: "/usr/share/zoneinfo/Universal" # UTC
+      REDIS_URL: redis://redis:6379/1
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+      - app_local_bundle:/usr/local/bundle
+  redis:
+    image: redis:7.2.4-alpine3.19
+    environment:
+      TZ: "/usr/share/zoneinfo/Universal" # UTC
+    ports:
+      - 6379:6379
+
+volumes:
+  app_local_bundle:
