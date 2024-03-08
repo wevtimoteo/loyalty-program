@@ -2,11 +2,21 @@
 
 require 'thor'
 
-class LoyaltyProgram < Thor
+require_relative './lib/logger'
+require_relative './lib/queue'
+require_relative './lib/consumers'
+
+class LoyaltyProgramCLI < Thor
   desc 'hello', 'say hello'
   def hello
     puts 'Hello'
   end
+
+  desc 'server', 'messages and orders watcher'
+  def server
+    LoyaltyProgram::Logger.log 'Starting server...'
+    LoyaltyProgram::Consumers.watch
+  end
 end
 
-LoyaltyProgram.start
+LoyaltyProgramCLI.start

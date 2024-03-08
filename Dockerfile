@@ -22,3 +22,4 @@ COPY --link . .
 
 # Entrypoint prepares the application
 ENTRYPOINT ["/app/bin/docker-entrypoint"]
+CMD ["./loyalty-program", "server"]
