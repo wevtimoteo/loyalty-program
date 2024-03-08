@@ -15,12 +15,18 @@ services:
     volumes:
       - .:/app
       - app_local_bundle:/usr/local/bundle
+    networks:
+      - loyalty-program-net
   redis:
     image: redis:7.2.4-alpine3.19
     environment:
       TZ: "/usr/share/zoneinfo/Universal" # UTC
+    networks:
+      - loyalty-program-net
     ports:
       - 6379:6379
 
 volumes:
   app_local_bundle:
+networks:
+  loyalty-program-net:
