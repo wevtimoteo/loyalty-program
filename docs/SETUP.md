@@ -16,6 +16,12 @@ asdf install
 This will install Ruby and Redis on specified version in
 `.tool-versions`.
 
+### Starting Redis
+
+```bash
+redis-server
+```
+
 ### Dependencies
 
 Just run default bundler command:
