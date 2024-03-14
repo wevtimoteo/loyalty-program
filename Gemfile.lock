@@ -10,6 +10,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    rake (13.1.0)
     redis (5.1.0)
       redis-client (>= 0.17.0)
     redis-client (0.21.0)
@@ -24,6 +25,7 @@ PLATFORMS
 DEPENDENCIES
   minitest
   minitest-reporters
+  rake
   redis
   thor
 
