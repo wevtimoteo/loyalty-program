@@ -7,3 +7,6 @@
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/.keep
+
+## Environment normalization:
+/.bundle/
