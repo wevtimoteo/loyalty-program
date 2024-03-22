@@ -12,3 +12,19 @@ Code challenge of a loyalty program in Ruby.
 
 - **[recommended]** For running app using Docker, [use this guide](docs/SETUP_DOCKER.md)
 - For installing tools in your own machine, [use this guide](/docs/SETUP.md)
+
+## Running tests
+
+You can just run:
+
+```bash
+bin/rake test
+```
+
+This task is the default defined in `Rakefile`, so you can just run `bin/rake`.
+
+### Running individual test file
+
+```bash
+ruby -Itest test/loyalty_program_cli_test.rb
+```
