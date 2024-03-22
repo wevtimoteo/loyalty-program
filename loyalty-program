@@ -1,22 +1,10 @@
 #!/usr/bin/env ruby
 
-require 'thor'
+require 'bundler'
 
-require_relative './lib/logger'
-require_relative './lib/queue'
-require_relative './lib/consumers'
+Bundler.require
+Bundler.setup
 
-class LoyaltyProgramCLI < Thor
-  desc 'hello', 'say hello'
-  def hello
-    puts 'Hello'
-  end
-
-  desc 'server', 'messages and orders watcher'
-  def server
-    LoyaltyProgram::Logger.log 'Starting server...'
-    LoyaltyProgram::Consumers.watch
-  end
-end
+require_relative './lib/loyalty_program_cli.rb'
 
 LoyaltyProgramCLI.start
