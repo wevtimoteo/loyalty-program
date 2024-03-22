@@ -8,5 +8,9 @@
 /tmp/pids/*
 !/tmp/pids/.keep
 
+# Configuration files
+/.env*
+!/.env.development.example
+
 ## Environment normalization:
 /.bundle/
