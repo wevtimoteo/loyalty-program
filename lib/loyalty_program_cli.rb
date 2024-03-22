@@ -2,7 +2,7 @@
 
 require 'thor'
 
-require_relative './logger'
+require_relative './simple_logger'
 require_relative './queue'
 require_relative './consumers'
 
@@ -11,13 +11,13 @@ class LoyaltyProgramCLI < Thor
   def hello
     greeting = 'Hello'
 
-    LoyaltyProgram::Logger.log greeting
+    LoyaltyProgram::SimpleLogger.log greeting
     greeting
   end
 
   desc 'server', 'messages and orders watcher'
   def server
-    LoyaltyProgram::Logger.log 'Starting server...'
+    LoyaltyProgram::SimpleLogger.log 'Starting server...'
     LoyaltyProgram::Consumers.watch
   end
 
