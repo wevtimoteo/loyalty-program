@@ -5,6 +5,13 @@ FROM ruby:$RUBY_VERSION-alpine3.19
 
 ARG BUNDLER_VERSION
 
+RUN apk --no-cache upgrade && \
+  apk add --no-cache \
+  make \
+  gcc \
+  cmake \
+  clang
+
 # App lives here
 WORKDIR /app
 
