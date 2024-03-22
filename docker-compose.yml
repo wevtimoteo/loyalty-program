@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    env_file:
+      - .env.development
     environment:
       RUBY_ENV: development
       TZ: "/usr/share/zoneinfo/Universal" # UTC
